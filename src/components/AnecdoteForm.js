@@ -5,11 +5,14 @@ const AnecdoteForm = ()=>{
 
     const dispach = useDispatch();
 
-    const addAnecdotes = (e)=>{
-        e.preventDefault()
-        const note= e.target.anecdote.value
-        e.target.anecdote.value=''
-        dispach(newAnecdote(note));  
+    const addAnecdotes = (event)=>{
+        event.preventDefault()
+        const note= event.target.anecdote.value
+        
+        if(note){
+            event.target.anecdote.value=''
+            dispach(newAnecdote(note));  
+        }
     }
 
     return (
