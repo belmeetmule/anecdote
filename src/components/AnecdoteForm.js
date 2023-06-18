@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import {addNewAnecdote } from '../reducers/anecdoteReducer'
+import {newAnecdote } from '../reducers/anecdoteReducer'
 
 const AnecdoteForm = ()=>{
 
@@ -9,7 +9,7 @@ const AnecdoteForm = ()=>{
         e.preventDefault()
         const note= e.target.anecdote.value
         e.target.anecdote.value=''
-        dispach(addNewAnecdote(note));  
+        dispach(newAnecdote(note));  
     }
 
     return (
@@ -25,4 +25,4 @@ const AnecdoteForm = ()=>{
     )
 }
 
-export default AnecdoteForm
+export default AnecdoteForm;
