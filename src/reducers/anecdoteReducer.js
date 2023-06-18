@@ -45,7 +45,7 @@ export const upVote = (id)=>{
   }
 }
 
-export const addNewAnecdote = (note)=>{
+export const newAnecdote = (note)=>{
   return {
     type: 'NEWNOTE',
     payload: {
