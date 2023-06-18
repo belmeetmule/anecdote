@@ -12,10 +12,13 @@ const AnecdoteList = ()=>{
     dispatch(upVote(id))
   }
 
+  // This is for sorting strings
+  // const sortedAnecdotes = anecdotes.sort((a,b)=> (a.content > b.content)? -1 : (b.content > a.content) ? 1: 0)  
+
     return(
         <div>
              <h2>Anecdotes</h2>
-                {anecdotes.map(anecdote =>
+                {anecdotes.sort((a,b)=> (b.votes - a.votes)).map(anecdote =>
                     <div key={anecdote.id}>
                     <div>
                         {anecdote.content}
