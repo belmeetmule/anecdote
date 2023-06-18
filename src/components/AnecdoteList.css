@@ -1,0 +1,15 @@
+.card{
+    display: flex;
+        border: 1px solid green;
+        flex-direction: column;
+        margin-bottom: 10px;
+        background: "#ccc";
+        border-radius: 8px;
+        padding: "0px 0 0 0";
+}
+
+.card:hover{
+    transform: skew(10deg, 0.8deg);
+    font-weight: bold;
+}
+
