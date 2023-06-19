@@ -5,7 +5,16 @@ import './AnecdoteList.css'
 
 const AnecdoteList = ()=>{
 
-    const anecdotes = useSelector(state => state)
+    const anecdotes = useSelector(state => {
+        console.log('filter in the aneclist', state)
+        if(state.filter.length > 0){
+            console.log('I was here', state.anecdotes)
+            const res = state.anecdotes.filter(element=> element.content.includes(state.filter))
+            return res
+        }
+        return state.anecdotes
+    })
+
     const dispatch = useDispatch()
 
     
