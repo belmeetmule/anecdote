@@ -1,3 +1,8 @@
+.cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+}
 .card{
     display: flex;
         border: 1px solid green;
@@ -6,6 +11,7 @@
         background: "#ccc";
         border-radius: 8px;
         padding: "0px 0 0 0";
+        justify-content: space-between;
 }
 
 .card:hover{
