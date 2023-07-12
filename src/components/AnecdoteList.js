@@ -1,27 +1,26 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { upVote } from '../reducers/anecdoteReducer'
+import { showNotification } from '../reducers/notificationReducer'
 import './AnecdoteList.css'
 
 
 const AnecdoteList = ()=>{
 
-    const anecdotes = useSelector(state => {
-        console.log('filter in the aneclist', state)
-        if(state.filter.length > 0){
-            console.log('I was here', state.anecdotes)
-            const res = state.anecdotes.filter(element=> element.content.includes(state.filter))
+    const anecdotes = useSelector(({anecdotes, filter }) => {
+        if(filter.length > 0){
+            const res = anecdotes.filter(element=> element.content.toLowerCase().includes(filter.toLowerCase()))
             return res
         }
-        return state.anecdotes
+        return anecdotes
     })
 
     const dispatch = useDispatch()
 
     
-  const vote = (id) => {
-    console.log('vote', id)
-    dispatch(upVote(id))
-  }
+    const vote = (id) => {
+        dispatch(upVote(id))
+        dispatch(showNotification(`You voted for:  ${anecdotes.find(item=>item.id===id).content}`))
+    }
 
   // This is for sorting strings
   // const sortedAnecdotes = anecdotes.sort((a,b)=> (a.content > b.content)? -1 : (b.content > a.content) ? 1: 0)  
@@ -40,11 +39,10 @@ const AnecdoteList = ()=>{
         padding: "10px 10px",
     }
 
-
-
     return(
-        <div>
-                {anecdotes.sort((a,b)=> (b.votes - a.votes)).map(anecdote =>
+        
+        <div className ="cards"> 
+                {[...anecdotes].sort((a,b)=> (b.votes - a.votes)).map(anecdote =>
                     <div key={anecdote.id} className='card'>
                         <div style={anecdoteBody}>
                             {anecdote.content}
