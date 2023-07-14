@@ -4,9 +4,8 @@ import Filter from './components/Filter'
 import AnecdoteForm from './components/AnecdoteForm'
 import { useDispatch } from 'react-redux'
 import { clearNotificaiton } from './reducers/notificationReducer'
-import anecdotesService from './services/anecdotesService'
 import { useEffect } from 'react'
-import { setAnecdotes } from './reducers/anecdoteReducer'
+import { initializeAnecdotes } from './reducers/anecdoteReducer'
 import './App.css'
 
 const App = () => {
@@ -17,7 +16,7 @@ const App = () => {
   }, 2000)
 
   useEffect(()=>{
-    anecdotesService.getAll().then((anecdotes)=>dispatch(setAnecdotes(anecdotes)))
+    dispatch(initializeAnecdotes())
   },[dispatch])
 
   return (
