@@ -80,12 +80,12 @@ export const createAnecdote = (content) => {
   }
 }
 
-export const voteAnecdote = (id) => {
+export const voteAnecdote = (anecdote) => {
   return async dispatch => {
     const anecdotes = await anecdoteService.getAll()
-    const anecdote = anecdotes.find(item => item.id === id)
-    const changedAnecdote = {...anecdote, votes: anecdote.votes+1}
-    const newItem = await anecdoteService.updateAnecdote(id, changedAnecdote)
+    const anecdoteToChange = anecdotes.find(item => item.id === anecdote.id)
+    const changedAnecdote = {...anecdoteToChange, votes: anecdoteToChange.votes+1}
+    const newItem = await anecdoteService.updateAnecdote(anecdote.id, changedAnecdote)
     dispatch(upVote(newItem.id))
   }
 }
