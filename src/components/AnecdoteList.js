@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { voteAnecdote } from '../reducers/anecdoteReducer'
-import { showNotification } from '../reducers/notificationReducer'
+//import { showNotification } from '../reducers/notificationReducer'
+import {setNotification} from '../reducers/notificationReducer'
 import './AnecdoteList.css'
 
 
@@ -17,9 +18,9 @@ const AnecdoteList = ()=>{
     const dispatch = useDispatch()
 
     
-    const vote = (id) => {
-        dispatch(voteAnecdote(id))
-        dispatch(showNotification(`You voted for:  ${anecdotes.find(item=>item.id===id).content}`))
+    const vote = (anecdote) => {
+        dispatch(voteAnecdote(anecdote))
+        dispatch(setNotification(`You voted for:  ${anecdote.content}`, 10))
     }
 
   // This is for sorting strings
@@ -49,7 +50,7 @@ const AnecdoteList = ()=>{
                         </div>
                         <div style={{background: "#ff000047", color:"white", padding: "0 10px", display: "flex", gap: "10px", alignItems:"center"}}>
                             has {anecdote.votes}
-                            <button onClick={() => vote(anecdote.id)} style={{padding: "3px 5px"}}>vote</button>
+                            <button onClick={() => vote(anecdote)} style={{padding: "3px 5px"}}>vote</button>
                         </div>
                     </div>
                 )}

@@ -25,11 +25,7 @@ const Notification = () => {
   const dispatch = useDispatch();
 
   if(notification !== ""){
-    setTimeout(()=> {
-     dispatch(clearNotificaiton())
-    }, 3000)
-
-
+   
   return (
     <div style={style}>
       {notification}
