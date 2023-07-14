@@ -4,6 +4,8 @@ import Filter from './components/Filter'
 import AnecdoteForm from './components/AnecdoteForm'
 import { useDispatch } from 'react-redux'
 import { clearNotificaiton } from './reducers/notificationReducer'
+import { useEffect } from 'react'
+import { initializeAnecdotes } from './reducers/anecdoteReducer'
 import './App.css'
 
 const App = () => {
@@ -12,6 +14,10 @@ const App = () => {
   setTimeout(()=>{
     dispatch(clearNotificaiton())
   }, 2000)
+
+  useEffect(()=>{
+    dispatch(initializeAnecdotes())
+  },[dispatch])
 
   return (
     <div className="container">
