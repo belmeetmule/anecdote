@@ -36,7 +36,7 @@ const AnecdoteList = ()=>{
 //     }
 
     const anecdoteBody ={
-        color: "#28292d63",
+        color: "rgb(202 195 241 / 74%)",
         padding: "10px 10px",
     }
 
@@ -48,7 +48,7 @@ const AnecdoteList = ()=>{
                         <div style={anecdoteBody}>
                             {anecdote.content}
                         </div>
-                        <div style={{background: "#ff000047", color:"white", padding: "0 10px", display: "flex", gap: "10px", alignItems:"center"}}>
+                        <div style={{background: "#131f20", color:"white", padding: "0 10px", display: "flex", gap: "10px", alignItems:"center"}}>
                             has {anecdote.votes}
                             <button onClick={() => vote(anecdote)} style={{padding: "3px 5px"}}>vote</button>
                         </div>

@@ -6,15 +6,16 @@
 
 .card{
         display: flex;
-        border: 1px solid green;
+        border: 1px solid #151f30;
         flex-direction: column;
         margin-bottom: 10px;
-        background: "#ccc";
+        background: #151f30;
         border-radius: 8px;
-        padding: "0px 0 0 0";
+        padding: 0px 0 0 0;
         justify-content: space-between;
         transition: all ease 0.6s;
         box-shadow: 0 0 3px black;
+        min-height: 37vh;
 }
 
 .card:hover{

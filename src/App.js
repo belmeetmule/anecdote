@@ -1,6 +1,6 @@
 import Notification from './components/Notification'
 import AnecdoteList from './components/AnecdoteList'
-import Filter from './components/Filter'
+import Header from './components/Header'
 import AnecdoteForm from './components/AnecdoteForm'
 import { useDispatch } from 'react-redux'
 import { clearNotificaiton } from './reducers/notificationReducer'
@@ -21,9 +21,8 @@ const App = () => {
 
   return (
     <div className="container">
-     <h2>Anecdotes</h2>
+      <Header />
       <Notification />
-      <Filter />
       <AnecdoteList />
       <AnecdoteForm />
     </div>
