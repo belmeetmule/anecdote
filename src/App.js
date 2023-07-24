@@ -7,6 +7,7 @@ import { clearNotificaiton } from './reducers/notificationReducer'
 import { useEffect } from 'react'
 import { initializeAnecdotes } from './reducers/anecdoteReducer'
 import './App.css'
+import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom'
 
 const App = () => {
 
@@ -20,12 +21,15 @@ const App = () => {
   },[dispatch])
 
   return (
-    <div className="container">
+    <Router>
       <Header />
-      <Notification />
-      <AnecdoteList />
-      <AnecdoteForm />
-    </div>
+      <Routes>
+        <Route path="/" element={<AnecdoteList />} />
+        <Route path="/create" element={<AnecdoteForm />} />
+        <Route path="*" element={<h1> 404 NOT FOUND</h1>} />
+      </Routes>    
+    </Router>    
+    
   )
 }
 

@@ -37,7 +37,7 @@
     },
     {
       "content": "test anecdote",
-      "votes": 0,
+      "votes": 1,
       "id": "F0z5jTX"
     },
     {
@@ -47,8 +47,18 @@
     },
     {
       "content": "Another test Anecdote",
-      "votes": 1,
+      "votes": 4,
       "id": "BmAb3DB"
+    },
+    {
+      "content": "This is a test in react router",
+      "votes": 0,
+      "id": "OdQPE7Q"
+    },
+    {
+      "content": "Man is the middle",
+      "votes": 0,
+      "id": "FGReNZD"
     }
   ]
 }
