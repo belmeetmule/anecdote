@@ -7,13 +7,24 @@ const Filter = () => {
     const handleChange = (event) => {
       dispach (filterChanged(event.target.value))
     }
-    const style = {
-      marginBottom: 10
+    const filterStyle = {
+      color: "#ddd",
+      fontSize: "1.2rem",
+    }
+    const inputStyle = {
+      background: "#ccc",
+      borderRadius: "8px",
+      border: "1px solid green",
+      padding: "5px 10px",
+      marginLeft: "10px",
+      fontSize: "1.2rem",
+      width: "150px",
+      
     }
   
     return (
-      <div style={style}>
-        filter <input onChange={handleChange} />
+      <div style={filterStyle}>
+        Filter <input onChange={handleChange} style={inputStyle} placeholder="search ..."/>
       </div>
     )
   }

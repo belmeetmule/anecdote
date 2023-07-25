@@ -1,12 +1,13 @@
 import Notification from './components/Notification'
 import AnecdoteList from './components/AnecdoteList'
-import Filter from './components/Filter'
+import Header from './components/Header'
 import AnecdoteForm from './components/AnecdoteForm'
 import { useDispatch } from 'react-redux'
 import { clearNotificaiton } from './reducers/notificationReducer'
 import { useEffect } from 'react'
 import { initializeAnecdotes } from './reducers/anecdoteReducer'
 import './App.css'
+import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom'
 
 const App = () => {
 
@@ -20,13 +21,15 @@ const App = () => {
   },[dispatch])
 
   return (
-    <div className="container">
-     <h2>Anecdotes</h2>
-      <Notification />
-      <Filter />
-      <AnecdoteList />
-      <AnecdoteForm />
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<AnecdoteList />} />
+        <Route path="/create" element={<AnecdoteForm />} />
+        <Route path="*" element={<h1> 404 NOT FOUND</h1>} />
+      </Routes>    
+    </Router>    
+    
   )
 }
 
