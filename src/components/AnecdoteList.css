@@ -16,7 +16,7 @@
         justify-content: space-between;
         transition: all ease 0.6s;
         box-shadow: 0 0 3px black;
-        min-height: 27vw;
+        min-height: 20vw;
 }
 
 .card:hover{
