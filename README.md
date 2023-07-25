@@ -27,9 +27,10 @@
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 Anecdotes <a name="about-the-project"></a>
-![](./src/images/project-mock.png)<br>
-**Homely-frontend** is an implemention of a connection between Ruby on Rails back-end and React front-end. [Homely-backend](https://github.com/belmeetmule/homely-backend) handles the backend API, and [Hello React Frontend](https://github.com/Wahaj-Ali/homely-frontend) handles the frontend UI to display a random greeting message.
+![](./public/scnshoot.png)<br>
+**Anecdotes** Anecdote is a simple educational react app that allows user to create and vote anecdotes. An anecdote is a short, personal story that illustrates a point or makes a larger argument. Anecdotes are often used in writing and speech to add interest, color, and personality.
 
+The app is a full-stack app that makes use of JSON server as a backend and React as a Front-end.
 
 ## 🛠 Built With <a name="built-with"></a>
 
